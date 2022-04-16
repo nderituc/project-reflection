@@ -50,4 +50,4 @@ Course objectives achieved
 * How write R programs for simulations from probability models and randomization-based experiments.
 * How to use source documentation and other resources to troubleshoot and extend R programs.Not so sure about this but i can extend R programs using source documentation.
 
-Generally i feel am at a good position in this class.
+Generally i feel am at a good position in this class.Grade B
