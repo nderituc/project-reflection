@@ -72,7 +72,7 @@ Generally i feel am at a good position in this class.The classes have been great
 plot(pressure)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
 ```{r}
 #install.packages("tidyverse")
 ```
