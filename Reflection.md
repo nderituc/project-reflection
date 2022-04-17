@@ -6,6 +6,7 @@ My most successful parts of the course have been.
 * Data visualization with with ggplot2.
 * Data transformation e.g pivoting.
 * use of tibbles,data import and tidying data.
+* Dealing with R packages
 
 
 My most exciting 
@@ -13,11 +14,14 @@ My most exciting
 * Github.
 * Data transformation.
 * Tidying data.
+* Building models and simulations
+* Bootsrapping
+
+
 
 Challenges
-* Creating facets.
-* Creating data pipes.
-* position adjustment on statistical transformation.
+* Abit of statistical modelling and simulation. 
+* Creating a shiny app is the biggest challenge for me.
 * 
 
 I have learnt how to-
@@ -50,4 +54,4 @@ Course objectives achieved
 * How write R programs for simulations from probability models and randomization-based experiments.
 * How to use source documentation and other resources to troubleshoot and extend R programs.Not so sure about this but i can extend R programs using source documentation.
 
-Generally i feel am at a good position in this class.Grade B
+Generally i feel am at a good position in this class.The classe have been great.The weekly activities have been help in practicing the topics.By challenge has been creating a shiny app.Grade A

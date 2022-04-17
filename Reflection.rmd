@@ -10,18 +10,63 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## R Markdown
+# Reflection
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+My most successful parts of the course have been.
+* Use of Rstudio, github and markdown.
+* Data visualization with with ggplot2.
+* Data transformation e.g pivoting.
+* use of tibbles,data import and tidying data.
+* Dealing with R packages
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
+My most exciting 
+* Data visualisation.
+* Github.
+* Data transformation.
+* Tidying data.
+* Building models and simulations.
+* Bootsrapping
+
+
+
+Challenges
+* Abit of statistical modelling and simulation. 
+* Creating a shiny app is the biggest challenge for me.
+* 
+
+I have learnt how to-
+```
+* Create or fork a git project,clone it to R-studio and commit it back to git.
+* Install r packages and load them using install.package() and library() functuions respectively.
+* Tidy data using pivot longer and pivot wider and also separating data into multiple columns as well as uniting columns using separate() and unite() functions respectively.
+* Do data transformation using various functions of the dplyr package ie
+* import data and tidy
+* filter() to pick observations by value.
+* arrange() to reorder rows.
+* select() to pick variables by name.
+* mutate() to create variables within existing variables.
+* summarise() to  put values in a single summary.
+* group_by haven't used but i know it exists.
+* Do data visualization using ggplot2 package and ggplot function.I can work with various geoms and map many  aesthetics on the plots.
+* Read data using read_csv function.
+* create data pipes.
+* Do data summaries in addition to visualization.
+* Combine data from various sources.
+* How write R programs for simulations from probability models and randomization-based experiments.
+*  How to use source documentation and other resources to troubleshoot and extend R programs.Not so sure about this but i can extend R programs using source documentation.
 ```
 
-## Including Plots
 
-You can also embed plots, for example:
+Course objectives achieved
+* To import,manage and clean data.Not sure about managing data but i can import and clean data efficiently.
+* I can create summaries of data and do various visualizations.
+* I can write clear R programs and document them.
+* How write R programs for simulations from probability models and randomization-based experiments.
+* How to use source documentation and other resources to troubleshoot and extend R programs.Not so sure about this but i can extend R programs using source documentation.
+
+Generally i feel am at a good position in this class.The classes have been great.The weekly activities have been helpful in practicing the topics.By challenge has been creating a shiny app.Grade A
+
 
 ```{r pressure, echo=FALSE}
 plot(pressure)
@@ -75,7 +120,7 @@ ggplot(data = share_of_deaths_by_cause) +
 ```
 
 
-#STatistical Transormations
+# STatistical Transormations
 ```{r statistical transformations}
 ggplot(data = share_of_deaths_by_cause) + 
   geom_bar(mapping = aes(x = Year))
@@ -103,25 +148,25 @@ ggplot(data = share_of_deaths_by_cause) +
   geom_bar(mapping = aes(x = Continent, fill = Continent))
 ```
 
-#filter by  rows
+# filter by  rows
 ```{r}
 filter(share_of_deaths_by_cause, Year ==2007, Terrorism>=0.5)
 
 ```
 
-#arrange()
+# arrange()
 ```{r}
 arrange(share_of_deaths_by_cause, Year, Continent, Terrorism)
 ```
-#select Columns
+# select Columns
 ```{r}
 select(share_of_deaths_by_cause, Year, Continent, Terrorism)
 ```
-#summarise
+# summarise
 ```{r}
 share_of_deaths_by_cause%>%group_by(Country)%>%summarise(new_Terrorism=mean(Terrorism, na.rm = TRUE))
 ```
-#MODEL
+# MODEL
 
 ```{r}
 library(tidyverse)
@@ -129,12 +174,12 @@ library(tidyverse)
 library(modelr)
 options(na.action = na.warn)
 ```
-#Creating taking a look of data sim1 contained in package moderl
+# Creating taking a look of data sim1 contained in package moderl
 ```{r}
 ggplot(sim1, aes(x, y)) + 
   geom_point()
 ```
-#Creating a model to capture pattern in the data
+# Creating a model to capture pattern in the data
 ```{r}
 mydata <- tibble(
   a1 = runif(250, -20, 40),
@@ -145,7 +190,7 @@ ggplot(sim1, aes(x, y)) +
   geom_abline(aes(intercept = a1, slope = a2), data = mydata, alpha = 1/4) +
   geom_point() 
 ```
-#Finding a good model from the ones created in above code by finding the model whose values have  the shortest distance from actual values of the data that is y values given by the data and actual y values of the data
+# Finding a good model from the ones created in above code by finding the model whose values have  the shortest distance from actual values of the data that is y values given by the data and actual y values of the data
 
 
 ```{r}
@@ -171,7 +216,7 @@ mydata
 
 ```
 
-#Now we overly the best ten models to the data
+# Now we overly the best ten models to the data
 ```{r}
 ggplot(sim1, aes(x, y)) + 
   geom_point(size = 2, colour = "grey30") + 
@@ -181,22 +226,21 @@ ggplot(sim1, aes(x, y)) +
   )
 ```
 
-#visualize the models with a scatterplot
+# visualize the models with a scatterplot
 ```{r}
 ggplot(mydata, aes(a1, a2)) +
   geom_point(data = filter(mydata, rank(dist) <= 10), size = 4, colour = "red") +
   geom_point(aes(colour = -dist))
 ```
 
-#visualising predictions from models
-#we make a tibble of one variable
+# visualising predictions from models.We make a tibble of one variable
 ```{r}
 q <- sim1 %>% 
   data_grid(x) 
 q
 
 ```
-#we use modelr::add_predictions() function which takes a data frame and a model and then adds a column of predictions to the dataframe.We first create a linear model
+# we use modelr::add_predictions() function which takes a data frame and a model and then adds a column of predictions to the dataframe.We first create a linear model
 ```{r}
 sim1_mod <- lm(y ~ x, data = sim1)
 
